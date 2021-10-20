@@ -11,11 +11,11 @@ public class StreamReduce {
 
     public String getLongest(List<String> words) {
 
-        return words.stream().reduce("", (word1, word2) -> word1.length() > word2.length() ? word1: word2);
+        return words.stream().reduce((word1, word2) -> word1.length() > word2.length() ? word1: word2).orElse(null);
     }
 
     public int getTotalLength(List<String> words) {
 
-        return words.stream().reduce("", (word1, word2) -> word1 + word2).length();
+        return words.stream().reduce((word1, word2) -> word1 + word2).orElse(null).length();
     }
 }
