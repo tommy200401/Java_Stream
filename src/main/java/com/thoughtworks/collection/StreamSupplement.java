@@ -20,6 +20,7 @@ public class StreamSupplement {
     }
 
     public int getMaxValue(List<Integer> numbers) {
+        int i;
         return numbers.stream().reduce((a,b)->a>b ? a:b).orElse(null);
     }
 
